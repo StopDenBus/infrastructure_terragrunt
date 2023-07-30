@@ -9,5 +9,5 @@ include "root" {
 }
 
 terraform {
-    source = "git@github.com:StopDenBus/infrastructure_terraform.git//system/vault/logrotate?ref=main"
+    source = "git@github.com:StopDenBus/infrastructure_terraform.git//system/logrotate?ref=main"
 }
