@@ -1,5 +1,6 @@
-terraform {
-  source = "git@github.com:StopDenBus/infrastructure_terraform.git//vault?ref=main"
+include "root" {
+  path = find_in_parent_folders()
+  merge_strategy = "deep"
 }
 
 inputs = {
@@ -132,12 +133,6 @@ locals {
     token = get_env("VAULT_TOKEN")
 }
 
-remote_state {
-    backend = "gcs"
-    config = {
-        bucket  = "mgusek-terraform"
-        prefix  = "terraform/state"
-        encryption_key = "SOtMtyaeyXNOj/1wqHzDK0nBWrpAQGtrJ4r/tg/mBY4="
-        credentials = "/home/micha/google/key.json"
-    }
+terraform {
+  source = "git@github.com:StopDenBus/infrastructure_terraform.git//vault?ref=main"
 }
