@@ -115,6 +115,9 @@ inputs = {
         mailu_secret_key: {
             name: "kubernetes/mailu/secret_key"
         },
+        mysql_budget: {
+            name: "mysql/budget"
+        },
         mysql_mailu: {
             name: "mysql/mailu"
         },                     

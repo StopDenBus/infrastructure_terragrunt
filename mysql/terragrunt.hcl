@@ -15,6 +15,7 @@ inputs = {
     admin_password = dependency.vault.outputs.secrets["mysql_root"]["key"]
 
     databases = {
+        budget: {},
         mailu: {},
         roundcube: {}
     }
@@ -22,14 +23,18 @@ inputs = {
     secrets = dependency.vault.outputs.secrets
 
     users = {
+        budget: {
+            privileges: [
+                { "database": "budget", "grant": [ "ALTER", "CREATE", "DELETE", "DROP", "INDEX", "INSERT", "SELECT", "UPDATE" ] }
+            ]
+        },
         mailu: {
             privileges: [
-                { "database": "mailu", "grant": [ "ALTER", "CREATE", "DELETE", "DROP", "INDEX", "INSERT", "SELECT", "UPDATE" ]},
-                { "database": "roundcube", "grant": [ "ALTER", "CREATE", "DELETE", "DROP", "INDEX", "INSERT", "SELECT", "UPDATE" ]}
+                { "database": "mailu", "grant": [ "ALTER", "CREATE", "DELETE", "DROP", "INDEX", "INSERT", "SELECT", "UPDATE" ] },
+                { "database": "roundcube", "grant": [ "ALTER", "CREATE", "DELETE", "DROP", "INDEX", "INSERT", "SELECT", "UPDATE" ] }
             ]
         }
     }
-
 }
 
 terraform {
