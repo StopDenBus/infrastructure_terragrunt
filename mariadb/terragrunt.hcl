@@ -12,7 +12,7 @@ include "root" {
 }
 
 inputs = {
-    endpoint = "stoppi.gusek.info:32307"
+    endpoint = "stoppi.gusek.info:32306"
 
     admin_password = dependency.vault.outputs.secrets["mysql_root"]["key"]
 
