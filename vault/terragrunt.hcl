@@ -1,5 +1,5 @@
 include "root" {
-  path = find_in_parent_folders()
+  path = find_in_parent_folders("root.hcl")
   merge_strategy = "deep"
 }
 
@@ -124,6 +124,12 @@ inputs = {
         mysql_root: {
             name: "mysql/admin"
         },
+        mysql_wishlist: {
+            name: "mysql/wishlist"
+        },
+        samba_kubernetes: {
+            name: "samba/kubernetes"
+        }
         vault_dex_client: {
             name: "kubernetes/dex/clients/vault"
         }

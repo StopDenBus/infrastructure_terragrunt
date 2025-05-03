@@ -7,7 +7,7 @@ dependency "vault" {
 }
 
 include "root" {
-  path = find_in_parent_folders()
+  path = find_in_parent_folders("root.hcl")
   merge_strategy = "deep"
 }
 
@@ -19,7 +19,8 @@ inputs = {
     databases = {
         budget: {},
         mailu: {},
-        roundcube: {}
+        roundcube: {},
+        wishlist: {}
     }
 
     secrets = dependency.vault.outputs.secrets
@@ -35,7 +36,12 @@ inputs = {
                 { "database": "mailu", "grant": [ "ALTER", "CREATE", "DELETE", "DROP", "INDEX", "INSERT", "SELECT", "UPDATE" ] },
                 { "database": "roundcube", "grant": [ "ALTER", "CREATE", "DELETE", "DROP", "INDEX", "INSERT", "SELECT", "UPDATE" ] }
             ]
-        }
+        },
+        wishlist: {
+            privileges: [
+                { "database": "wishlist", "grant": [ "ALTER", "CREATE", "DELETE", "DROP", "INDEX", "INSERT", "SELECT", "UPDATE" ] }
+            ]
+        },        
     }
 }
 
