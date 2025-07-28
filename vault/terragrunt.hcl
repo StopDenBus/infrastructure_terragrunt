@@ -127,6 +127,9 @@ inputs = {
         mysql_wishlist: {
             name: "mysql/wishlist"
         },
+        pihole_admin: {
+            name: "pihole/admin"
+        },
         samba_kubernetes: {
             name: "samba/kubernetes"
         }
