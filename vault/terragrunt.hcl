@@ -39,7 +39,7 @@ inputs = {
                         capabilities = ["create", "read", "update", "delete", "list", "sudo"]
                     },
                     "sys/health": {
-                        capabilities = ["read", "sudo"]    
+                        capabilities = ["read", "sudo"]
                     },
                     "sys/capabilities": {
                         capabilities = ["create", "update"]
@@ -62,7 +62,7 @@ inputs = {
                 }
             }
         }
-        terraform: { 
+        terraform: {
             policy: {
                 path: {
                     "sys/policies/acl/*": {
@@ -76,7 +76,7 @@ inputs = {
                     }
                     "sys/mounts/*": {
                         capabilities = [ "create", "read", "update", "patch", "delete", "list" ]
-                    }                    
+                    }
                     "secrets/*": {
                         capabilities = [ "create", "read", "update", "patch", "delete", "list" ]
                     }
@@ -91,7 +91,7 @@ inputs = {
                     },
                     "auth/kubernetes/login": {
                         capabilities = [ "update" ]
-                    }      
+                    }
                 }
             }
         }
@@ -111,7 +111,7 @@ inputs = {
         },
         mailu_admin: {
             name: "kubernetes/mailu/admin"
-        },        
+        },
         mailu_secret_key: {
             name: "kubernetes/mailu/secret_key"
         },
@@ -120,7 +120,7 @@ inputs = {
         },
         mysql_mailu: {
             name: "mysql/mailu"
-        },                     
+        },
         mysql_root: {
             name: "mysql/admin"
         },
@@ -130,6 +130,9 @@ inputs = {
         pihole_admin: {
             name: "pihole/admin"
         },
+        pypi_upload: {
+            name: "kubernetes/pypi/pypi"
+        },
         samba_kubernetes: {
             name: "samba/kubernetes"
         }
@@ -137,7 +140,7 @@ inputs = {
             name: "kubernetes/dex/clients/vault"
         }
     }
-    
+
     token    = local.token
 }
 
