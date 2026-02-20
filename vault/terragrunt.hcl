@@ -118,6 +118,9 @@ inputs = {
         mysql_budget: {
             name: "mysql/budget"
         },
+        mysql_dungeon: {
+            name: "mysql/dungeon"
+        },
         mysql_mailu: {
             name: "mysql/mailu"
         },
