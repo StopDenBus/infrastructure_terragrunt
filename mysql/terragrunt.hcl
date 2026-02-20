@@ -18,6 +18,7 @@ inputs = {
 
     databases = {
         budget: {},
+        dungeon: {},
         mailu: {},
         roundcube: {},
         wishlist: {}
@@ -31,6 +32,11 @@ inputs = {
                 { "database": "budget", "grant": [ "ALTER", "CREATE", "DELETE", "DROP", "INDEX", "INSERT", "SELECT", "UPDATE" ] }
             ]
         },
+        dungeon: {
+            privileges: [
+                { "database": "dungeon", "grant": [ "ALTER", "CREATE", "DELETE", "DROP", "INDEX", "INSERT", "SELECT", "UPDATE" ] }
+            ]
+        },
         mailu: {
             privileges: [
                 { "database": "mailu", "grant": [ "ALTER", "CREATE", "DELETE", "DROP", "INDEX", "INSERT", "SELECT", "UPDATE" ] },
@@ -41,7 +47,7 @@ inputs = {
             privileges: [
                 { "database": "wishlist", "grant": [ "ALTER", "CREATE", "DELETE", "DROP", "INDEX", "INSERT", "SELECT", "UPDATE" ] }
             ]
-        },        
+        },
     }
 }
 
