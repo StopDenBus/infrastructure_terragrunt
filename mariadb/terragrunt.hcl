@@ -27,7 +27,7 @@ inputs = {
     users = {
         budget: {
             privileges: [
-                { "database": "budget", "grant": [ "ALTER", "CREATE", "DELETE", "DROP", "INDEX", "INSERT", "SELECT", "UPDATE" ] }
+                { "database": "budget", "grant": [ "ALTER", "CREATE", "DELETE", "DROP", "INDEX", "INSERT", "REFERENCES", "SELECT", "UPDATE" ] }
             ]
         },
         mailu: {
